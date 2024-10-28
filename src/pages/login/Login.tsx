@@ -4,7 +4,7 @@ import photo from "/images/login.jpg";
 function Login() {
   return (
     <div className="grid grid-cols-7 p-7 gap-7 bg-bg_light">
-      <div className=" col-span-3 p-10 rounded-2xl bg-white rounded-3xl">
+      <div className=" col-span-3 p-10 bg-white rounded-3xl">
         <Outlet />
       </div>
       <img

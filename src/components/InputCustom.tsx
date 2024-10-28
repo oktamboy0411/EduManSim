@@ -33,7 +33,7 @@ function InputCustom({
   onChange?: React.Dispatch<React.SetStateAction<string>>;
   value?: string;
 }) {
-  const [type, SetType] = useState<boolean>(false);
+  const [type, SetType] = useState<boolean>(true);
   const [text, SetText] = useState<string>(value || "");
 
   const handleChange = (event: {
