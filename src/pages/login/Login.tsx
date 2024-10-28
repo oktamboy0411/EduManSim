@@ -1,12 +1,18 @@
-import { Outlet } from "react-router-dom"
+import { Outlet } from "react-router-dom";
+import photo from "/images/login.jpg";
 
 function Login() {
   return (
-    <div>
-        <h1>Login</h1>
+    <div className="grid grid-cols-7 p-7 gap-7 bg-bg_light">
+      <div className=" col-span-3 p-10 rounded-2xl bg-white rounded-3xl">
         <Outlet />
+      </div>
+      <img
+        className=" col-span-4 h-[890px] object-cover w-full rounded-3xl"
+        src={photo}
+      />
     </div>
-  )
+  );
 }
 
-export default Login
+export default Login;

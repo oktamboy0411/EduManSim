@@ -3,7 +3,7 @@ import { Header } from "../../components"
 
 function Home() {
   return (
-    <div>
+    <div className="h-[100vh]">
         <Header />
         <Outlet />
     </div>

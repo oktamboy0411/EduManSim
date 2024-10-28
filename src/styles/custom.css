@@ -1,0 +1,6 @@
+.homePageBg{
+    background-image: url(../../public/images/homePageBg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
