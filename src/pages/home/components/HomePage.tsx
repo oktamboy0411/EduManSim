@@ -12,10 +12,11 @@ function HomePage() {
           for education
         </h2>
         <ButtonCustom
-          text={"Request a demo"}
           className=" px-36 font-medium"
           onClick={() => navigate("/request_demo")}
-        />
+        >
+          Request a demo
+        </ButtonCustom>
       </div>
       <div className="w-full flex flex-col items-center gap-4 mb-5">
         <span className=" inline-block h-1 w-5/6 bg-line_color"></span>

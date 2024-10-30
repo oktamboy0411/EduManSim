@@ -5,10 +5,10 @@ function Header() {
   const navigate = useNavigate();
 
   return (
-    <div className="flex items-center justify-between px-11 py-4">
+    <div className="flex items-center justify-between px-11 py-4 bg-white">
       <h1
         onClick={() => navigate("/")}
-        className=" font-public_sans font-bold text-3xl text-main_color-600 "
+        className=" font-public_sans font-bold text-3xl text-main_color-600 cursor-pointer "
       >
         EduManSim
       </h1>
@@ -20,7 +20,7 @@ function Header() {
           (90) 417-47-56
         </a>
         <ChangeLanguage />
-        <ButtonCustom text={"Log in"} onClick={() => navigate("/login")} />
+        <ButtonCustom onClick={() => navigate("/login")}>Log in</ButtonCustom>
       </div>
     </div>
   );

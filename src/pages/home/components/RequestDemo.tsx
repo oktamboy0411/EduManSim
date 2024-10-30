@@ -40,7 +40,7 @@ function RequestDemo() {
             info@edumansim.uz
           </a>
         </div>
-        <ButtonCustom className="w-96" text="Request a demo" />
+        <ButtonCustom className="w-96">Request a demo</ButtonCustom>
       </div>
     </div>
   );

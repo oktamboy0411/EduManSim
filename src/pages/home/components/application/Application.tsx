@@ -1,8 +1,27 @@
 import { useNavigate } from "react-router-dom";
 import { ButtonCustom, InputCustom, LabelCustom } from "../../../../components";
+import { useState } from "react";
+import { CEOdatatype, updateDataCEO } from "../../../../axios/functions";
 
 function Application() {
   const navigate = useNavigate();
+
+  const [name, setName] = useState("");
+  const [surname, setSurname] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [email, setEmail] = useState("");
+  const [companyName, setCompanyName] = useState("");
+
+  const handleClick = () => {
+    const data: CEOdatatype = {
+      name,
+      surname,
+      phone_number: phoneNumber,
+      email,
+      company_name: companyName,
+    };
+    updateDataCEO(data);
+  };
 
   return (
     <div className=" bg-white p-10 rounded-2xl flex flex-col gap-7 items-center">
@@ -11,36 +30,39 @@ function Application() {
       </h2>
       <div className="w-full">
         <LabelCustom className="mb-3" text="Name" redStar={true} />
-        <InputCustom placeholder="Enter name" variant="" />
+        <InputCustom placeholder="Enter name" onChange={setName} />
       </div>
       <div className="w-full">
         <LabelCustom className="mb-3" text="Surname" redStar={true} />
-        <InputCustom placeholder="Enter surname" variant="" />
+        <InputCustom placeholder="Enter surname" onChange={setSurname} />
       </div>
       <div className="w-full">
         <LabelCustom className="mb-3" text="Phone number" redStar={true} />
-        <InputCustom placeholder="+998" variant="" />
+        <InputCustom placeholder="+998" onChange={setPhoneNumber} />
       </div>
       <div className="w-full">
         <LabelCustom className="mb-3" text="Email" redStar={true} />
-        <InputCustom placeholder="Enter email" variant="" />
+        <InputCustom placeholder="Enter email" onChange={setEmail} />
       </div>
       <div className="w-full">
         <LabelCustom className="mb-3" text="Company name" redStar={true} />
-        <InputCustom placeholder="Enter company name" variant="" />
+        <InputCustom
+          placeholder="Enter company name"
+          onChange={setCompanyName}
+        />
       </div>
 
-      <ButtonCustom className="w-full" text="Send" />
+      <ButtonCustom onClick={handleClick} className="w-full">
+        Send
+      </ButtonCustom>
       <hr className="h-[2px] bg-main_color-500 w-full" />
       <div className="flex items-center justify-between w-full">
         <p className=" font-public_sans font-bold text-base text-main_color-500">
           Are you already registered?
         </p>
-        <ButtonCustom
-          onClick={() => navigate("/login")}
-          variant="outline"
-          text="Log in"
-        />
+        <ButtonCustom onClick={() => navigate("/login")} variant="outline">
+          Log in
+        </ButtonCustom>
       </div>
     </div>
   );

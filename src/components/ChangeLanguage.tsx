@@ -7,32 +7,10 @@ import {
 } from "@material-tailwind/react";
 import { IoGlobeOutline } from "react-icons/io5";
 import { useState } from "react";
-interface lang {
-  id: string;
-  name: string;
-  value: string;
-}
-
-const languages: lang[] = [
-  {
-    id: "1",
-    name: "Eng",
-    value: "eng",
-  },
-  {
-    id: "2",
-    name: "Rus",
-    value: "rus",
-  },
-  {
-    id: "3",
-    name: "Uzb",
-    value: "uzb",
-  },
-];
+import { LanguagesData } from "../constants";
 
 function ChangeLanguage({ className }: { className?: string }) {
-  const [selected, setSelected] = useState<lang>(languages[0]);
+  const [selected, setSelected] = useState(LanguagesData[0]);
 
   return (
     <Menu>
@@ -58,7 +36,7 @@ function ChangeLanguage({ className }: { className?: string }) {
         onPointerEnterCapture={undefined}
         onPointerLeaveCapture={undefined}
       >
-        {languages.map((item) => (
+        {LanguagesData.map((item) => (
           <MenuItem
             className="flex items-center gap-1"
             onClick={() => setSelected(item)}

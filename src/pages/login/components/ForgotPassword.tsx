@@ -7,8 +7,11 @@ import {
   LogoType,
 } from "../../../components";
 import { IoIosArrowBack } from "react-icons/io";
+import { useNavigate } from "react-router-dom";
 
 function ForgotPassword() {
+  const navigate = useNavigate();
+
   return (
     <>
       <div className="flex items-center justify-between w-full mb-20">
@@ -23,9 +26,10 @@ function ForgotPassword() {
           <LabelCustom className="mb-3" text="Email" variant="blue" />
           <InputCustom variant="blue" placeholder="Enter email address" />
         </div>
-        <ButtonCustom className=" w-full " text="Send" />
+        <ButtonCustom className=" w-full ">Send</ButtonCustom>
         <hr className="w-full h-[2px] bg-main_color-500" />
         <Button
+          onClick={() => navigate("/login")}
           className="flex items-center gap-3"
           variant="text"
           placeholder={undefined}

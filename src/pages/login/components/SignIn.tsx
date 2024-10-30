@@ -26,7 +26,7 @@ function SignIn() {
           <LabelCustom className=" mb-3 " text="Password" redStar={true} />
           <InputCustom placeholder="Enter password" password />
         </div>
-        <ButtonCustom text="Next" className=" w-full " />
+        <ButtonCustom className=" w-full ">Next</ButtonCustom>
         <hr className=" w-full h-[2px] bg-main_color-500" />
         <h3 className=" font-public_sans font-bold text-base w-full">
           Don't have an account? |{" "}

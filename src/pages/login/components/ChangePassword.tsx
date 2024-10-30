@@ -42,7 +42,7 @@ function ChangePassword() {
             password
           />
         </div>
-        <ButtonCustom className=" w-full " text="Next" />
+        <ButtonCustom className=" w-full ">Next</ButtonCustom>
       </div>
     </>
   );
