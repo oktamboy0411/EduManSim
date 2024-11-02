@@ -1,10 +1,12 @@
 import { useNavigate } from "react-router-dom";
 import { ButtonCustom, InputCustom, LabelCustom } from "../../../../components";
 import { useState } from "react";
-import { CEOdatatype, updateDataCEO } from "../../../../axios/functions";
+import { CEOState, patchCEOdata } from "../../../../store/features";
+import { useDispatch } from "react-redux";
 
 function Application() {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const [name, setName] = useState("");
   const [surname, setSurname] = useState("");
@@ -13,14 +15,14 @@ function Application() {
   const [companyName, setCompanyName] = useState("");
 
   const handleClick = () => {
-    const data: CEOdatatype = {
+    const data: CEOState = {
       name,
       surname,
       phone_number: phoneNumber,
       email,
       company_name: companyName,
     };
-    updateDataCEO(data);
+    dispatch(patchCEOdata(data));
   };
 
   return (

@@ -7,3 +7,4 @@ export { default as SelectCustom } from "./SelectCustom";
 export { default as LogoType } from "./LogoType";
 export { default as GeoLocation } from "./GeoLocation";
 export { default as MainBoxAccordion } from "./MainBoxAccordion";
+export { default as AlertCustom } from "./AlertCustom";

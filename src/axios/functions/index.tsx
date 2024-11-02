@@ -1,3 +1,2 @@
-export { updateDataCEO } from "./CEO";
-
-export type { CEOdatatype } from "./CEO";
+/* eslint-disable react-refresh/only-export-components */
+export { default as CEOGetFunction, updateDataCEO } from "./CEO";
