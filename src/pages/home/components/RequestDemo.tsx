@@ -1,4 +1,4 @@
-import { ButtonCustom } from "../../../components";
+import { ButtonCustom } from "../../../components/common";
 import { MdPhone, MdEmail } from "react-icons/md";
 import { Application } from "./application";
 

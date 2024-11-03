@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { ButtonCustom } from "../../../components";
+import { ButtonCustom } from "../../../components/common";
 
 function HomePage() {
   const navigate = useNavigate();

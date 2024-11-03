@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { IoEyeOffOutline, IoEyeOutline } from "react-icons/io5";
-import { InputVariants } from "../constants";
+import { InputVariants } from "../../constants";
+import InputMask from "react-input-mask";
 
 function InputCustom({
   className,
@@ -9,6 +10,7 @@ function InputCustom({
   password,
   onChange,
   value,
+  phoneNumber,
 }: {
   className?: string;
   variant?: string;
@@ -16,6 +18,7 @@ function InputCustom({
   password?: boolean;
   onChange?: React.Dispatch<React.SetStateAction<string>>;
   value?: string;
+  phoneNumber?: boolean;
 }) {
   const [type, SetType] = useState<boolean>(true);
   const [text, SetText] = useState<string>(value || "");
@@ -23,8 +26,9 @@ function InputCustom({
   const handleChange = (event: {
     target: { value: React.SetStateAction<string> };
   }) => {
-    SetText(event.target.value);
-    if (onChange) onChange(event.target.value);
+    const input = event.target.value;
+    SetText(input);
+    if (onChange) onChange(input);
   };
 
   return (
@@ -35,7 +39,8 @@ function InputCustom({
         className
       }
     >
-      <input
+      <InputMask
+        mask={phoneNumber ? "+999-(99)-999-99-99" : ""}
         value={text}
         onChange={handleChange}
         type={type && password ? "password" : "text"}

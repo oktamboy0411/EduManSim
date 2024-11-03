@@ -5,7 +5,7 @@ import {
   InputCustom,
   LabelCustom,
   LogoType,
-} from "../../../components";
+} from "../../../components/common";
 import { IoIosArrowBack } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 

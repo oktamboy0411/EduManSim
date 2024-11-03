@@ -4,7 +4,7 @@ import {
   InputCustom,
   LabelCustom,
   LogoType,
-} from "../../../components";
+} from "../../../components/common";
 
 function ChangePassword() {
   return (

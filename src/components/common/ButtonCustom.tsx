@@ -1,5 +1,5 @@
 import { Button } from "@material-tailwind/react";
-import { ButtonVariants } from "../constants";
+import { ButtonVariants } from "../../constants";
 import React from "react";
 
 type MyComponentProps = {

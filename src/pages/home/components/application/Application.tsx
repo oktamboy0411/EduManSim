@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { ButtonCustom, InputCustom, LabelCustom } from "../../../../components";
+import { ButtonCustom, InputCustom, LabelCustom } from "../../../../components/common";
 import { useState } from "react";
 import { CEOState, patchCEOdata } from "../../../../store/features";
 import { useDispatch } from "react-redux";
@@ -40,7 +40,7 @@ function Application() {
       </div>
       <div className="w-full">
         <LabelCustom className="mb-3" text="Phone number" redStar={true} />
-        <InputCustom placeholder="+998" onChange={setPhoneNumber} />
+        <InputCustom phoneNumber value="+998" onChange={setPhoneNumber} />
       </div>
       <div className="w-full">
         <LabelCustom className="mb-3" text="Email" redStar={true} />

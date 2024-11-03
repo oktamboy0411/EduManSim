@@ -4,7 +4,7 @@ import {
   AccordionHeader,
 } from "@material-tailwind/react";
 import ButtonCustom from "./ButtonCustom";
-import { MainBoxDataAccordion } from "../constants";
+import { MainBoxDataAccordion } from "../../constants";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { FiSettings } from "react-icons/fi";

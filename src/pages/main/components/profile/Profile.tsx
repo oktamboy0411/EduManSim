@@ -1,5 +1,5 @@
 import { Avatar } from "@material-tailwind/react";
-import { ButtonCustom } from "../../../../components";
+import { ButtonCustom } from "../../../../components/common";
 import { GrEdit } from "react-icons/gr";
 import photo from "../../../../../public/images/Avatar.png";
 import { Modal } from "../../../../modals";

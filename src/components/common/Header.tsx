@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { ButtonCustom, ChangeLanguage } from "../components";
+import { ButtonCustom, ChangeLanguage } from ".";
 
 function Header() {
   const navigate = useNavigate();

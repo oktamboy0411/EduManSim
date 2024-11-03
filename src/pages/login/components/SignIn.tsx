@@ -4,7 +4,7 @@ import {
   ChangeLanguage,
   InputCustom,
   LabelCustom,
-} from "../../../components";
+} from "../../../components/common";
 
 function SignIn() {
   const navigate = useNavigate();
@@ -20,7 +20,7 @@ function SignIn() {
         </h2>
         <div className=" w-full ">
           <LabelCustom className=" mb-3 " text="Phone number" redStar={true} />
-          <InputCustom placeholder="+998" />
+          <InputCustom phoneNumber value="+998" />
         </div>
         <div className=" w-full ">
           <LabelCustom className=" mb-3 " text="Password" redStar={true} />

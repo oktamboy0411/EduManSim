@@ -3,9 +3,9 @@ import { Home, HomePage, RequestDemo } from "../pages/home";
 import { ChangePassword, ForgotPassword, Login, SignIn } from "../pages/login";
 import { MainBox } from "../pages/main";
 import { Profile } from "../pages/main/components/profile";
-import { Groups, Leads, Lists } from "../pages/main/components/leads";
+import { Leads } from "../pages/main/components/leads";
 import { CEOGetFunction } from "../axios/functions";
-import { AlertCustom } from "../components";
+import { AlertCustom } from "../components/common";
 
 const router = createBrowserRouter([
   {
@@ -51,16 +51,6 @@ const router = createBrowserRouter([
       {
         path: "leads",
         element: <Leads />,
-        children: [
-          {
-            path: "groups",
-            element: <Groups />,
-          },
-          {
-            path: "lists",
-            element: <Lists />,
-          },
-        ],
       },
     ],
   },

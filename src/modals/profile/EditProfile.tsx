@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { ButtonCustom, InputCustom, LabelCustom } from "../../components";
+import { ButtonCustom, InputCustom, LabelCustom } from "../../components/common";
 import { setModalOpen } from "../../store/features";
 
 function EditProfile() {
@@ -33,7 +33,7 @@ function EditProfile() {
       </div>
       <div>
         <LabelCustom className=" mb-3 " text="Phone number" redStar={true} />
-        <InputCustom value="+998" />
+        <InputCustom phoneNumber value="+998" />
       </div>
       <ButtonCustom onClick={handleOpen} className="w-full">
         Send

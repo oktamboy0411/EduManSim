@@ -7,7 +7,7 @@ import {
 } from "@material-tailwind/react";
 import { IoGlobeOutline } from "react-icons/io5";
 import { useState } from "react";
-import { LanguagesData } from "../constants";
+import { LanguagesData } from "../../constants";
 
 function ChangeLanguage({ className }: { className?: string }) {
   const [selected, setSelected] = useState(LanguagesData[0]);

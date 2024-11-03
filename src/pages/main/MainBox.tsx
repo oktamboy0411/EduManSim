@@ -5,7 +5,7 @@ import {
   Header,
   LogoType,
   MainBoxAccordion,
-} from "../../components";
+} from "../../components/common";
 import { IoMdNotificationsOutline } from "react-icons/io";
 import { MainBoxData } from "../../constants";
 import { Avatar } from "@material-tailwind/react";
