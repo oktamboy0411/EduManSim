@@ -10,12 +10,14 @@ import { IoMdNotificationsOutline } from "react-icons/io";
 import { MainBoxData } from "../../constants";
 import { Avatar } from "@material-tailwind/react";
 import photo from "../../../public/images/Avatar.png";
+import { Modal } from "../../modals";
 
 function MainBox() {
   const navigate = useNavigate();
 
   return (
     <div className="grid grid-cols-11">
+      <Modal />
       <div className=" col-span-2 border-r-2 border-line_color rounded-e-xl p-6">
         <LogoType className=" w-full mb-6 " />
         <GeoLocation />

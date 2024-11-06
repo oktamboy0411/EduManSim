@@ -24,6 +24,7 @@ function GroupButton({
     <div className=" rounded-md border-2 inline-block border-main_color-600">
       {data.map((item) => (
         <Button
+          key={item.id}
           placeholder={undefined}
           onPointerEnterCapture={undefined}
           onPointerLeaveCapture={undefined}

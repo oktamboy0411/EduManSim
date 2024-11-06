@@ -2,10 +2,18 @@ import { Avatar } from "@material-tailwind/react";
 import { ButtonCustom } from "../../../../components/common";
 import { GrEdit } from "react-icons/gr";
 import photo from "../../../../../public/images/Avatar.png";
-import { Modal } from "../../../../modals";
-import { EditProfile } from "../../../../modals/profile";
+import { MODAL_LIST_DATA } from "../../../../modals";
+import { useDispatch } from "react-redux";
+import { setModalOpen, setModalType } from "../../../../store/features";
 
 function Profile() {
+  const dispatch = useDispatch();
+
+  const handleClick = () => {
+    dispatch(setModalType({ value: MODAL_LIST_DATA.EditProfile }));
+    dispatch(setModalOpen());
+  };
+
   return (
     <div className="p-10">
       <div className=" p-[6px] rounded-[14px] w-[340px] bg-white">
@@ -17,12 +25,13 @@ function Profile() {
             onPointerEnterCapture={undefined}
             onPointerLeaveCapture={undefined}
           />
-          <Modal modal_body={<EditProfile />}>
-            <ButtonCustom className="flex items-center gap-2 px-4">
-              <GrEdit />
-              <span>Edit Profile</span>
-            </ButtonCustom>
-          </Modal>
+          <ButtonCustom
+            onClick={handleClick}
+            className="flex items-center gap-2 px-4"
+          >
+            <GrEdit />
+            <span>Edit Profile</span>
+          </ButtonCustom>
         </div>
         <div className="mt-10 mx-5 mb-4">
           <h2 className=" font-public_sans font-bold text-lg mb-1">

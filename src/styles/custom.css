@@ -1,6 +1,11 @@
-.homePageBg{
-    background-image: url(../../public/images/homePageBg.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+.homePageBg {
+  background-image: url(../../public/images/homePageBg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.no-icon-input::-webkit-calendar-picker-indicator {
+  display: none;
+  -webkit-appearance: none;
 }

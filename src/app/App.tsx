@@ -4,7 +4,7 @@ import { ChangePassword, ForgotPassword, Login, SignIn } from "../pages/login";
 import { MainBox } from "../pages/main";
 import { Profile } from "../pages/main/components/profile";
 import { Leads } from "../pages/main/components/leads";
-import { CEOGetFunction } from "../axios/functions";
+// import { CEOGetFunction } from "../axios/functions";
 import { AlertCustom } from "../components/common";
 
 const router = createBrowserRouter([
@@ -59,7 +59,7 @@ const router = createBrowserRouter([
 const App = () => {
   return (
     <div className="mx-auto max-w-[1420px]">
-      <CEOGetFunction />
+      {/* <CEOGetFunction /> */}
       <AlertCustom />
       <RouterProvider router={router} />
     </div>

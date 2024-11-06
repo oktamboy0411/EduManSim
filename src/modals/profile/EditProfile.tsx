@@ -1,5 +1,9 @@
 import { useDispatch } from "react-redux";
-import { ButtonCustom, InputCustom, LabelCustom } from "../../components/common";
+import {
+  ButtonCustom,
+  InputCustom,
+  LabelCustom,
+} from "../../components/common";
 import { setModalOpen } from "../../store/features";
 
 function EditProfile() {
@@ -7,7 +11,7 @@ function EditProfile() {
   const handleOpen = () => dispatch(setModalOpen());
 
   return (
-    <div className="px-5 py-3 flex flex-col gap-7">
+    <div className=" flex flex-col gap-7">
       <h2 className=" font-public_sans font-bold text-3xl text-main_color-500 text-center">
         Edit Profile
       </h2>

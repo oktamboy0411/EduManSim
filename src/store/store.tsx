@@ -1,10 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { CEOSlice, modalOpenSlice } from "./features";
+import { CEOSlice, modalOpenSlice, modalTypeSlice } from "./features";
 
 const store = configureStore({
   reducer: {
     modalOpen: modalOpenSlice,
-    CEO: CEOSlice
+    CEO: CEOSlice,
+    modalType: modalTypeSlice,
   },
 });
 

@@ -1,35 +1,150 @@
-import { Option, Select } from "@material-tailwind/react";
-import { useState } from "react";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { FiChevronDown } from "react-icons/fi";
+import Select, { StylesConfig } from "react-select";
 
-// function VARIANTS(text:string){
-//     switch(text){
-//         case " ":
-//             break;
-//         default: 
-//     }
-// }
+interface dataType {
+  value: string;
+  label: string;
+}
 
-function SelectCustom() {
-  const [value, setValue] = useState("");
+const VARIANTS = (variant: string) => {
+  switch (variant) {
+    case "blue":
+      return {
+        control: {
+          backgroundColor: "#F2F8FF",
+        },
+        singleValue: {
+          color: "#005BC4",
+        },
+        placeholder: {
+          color: "#005BC4",
+        },
+        menu: {
+          backgroundColor: "#F2F8FF",
+        },
+        option: {
+          ":hover": {
+            backgroundColor: "white",
+          },
+        },
+      };
+    default:
+      return {
+        control: {},
+        singleValue: {},
+        placeholder: {},
+        menu: {},
+        option: {},
+      };
+  }
+};
+
+function SelectCustom({
+  data,
+  getValue,
+  isMulti = false,
+  isSearchable = false,
+  variant,
+  placeholder,
+}: {
+  data: dataType[];
+  getValue?: React.Dispatch<React.SetStateAction<string | string[]>>;
+  isMulti?: boolean | undefined;
+  isSearchable?: boolean;
+  variant?: string;
+  placeholder?: string;
+}) {
+  const variantValue = VARIANTS(variant || "");
+
+  const customStyles: StylesConfig<dataType, true> = {
+    control: (provided) => ({
+      ...provided,
+      display: "flex",
+      alignItems: "center",
+      borderRadius: "8px",
+      padding: " 8px 10px",
+      borderColor: "#BFC9D9",
+      borderWidth: "2px",
+      ...variantValue.control,
+    }),
+    dropdownIndicator: (provided) => ({
+      ...provided,
+      padding: 0,
+    }),
+    singleValue: (provided) => ({
+      ...provided,
+      fontFamily: ["Public Sans", "sans-serif"],
+      fontSize: "18px",
+      ...variantValue.singleValue,
+    }),
+    placeholder: (provided) => ({
+      ...provided,
+      fontFamily: ["Public Sans", "sans-serif"],
+      fontSize: "18px",
+      ...variantValue.placeholder,
+    }),
+    menu: (provided) => ({
+      ...provided,
+      borderRadius: "8px",
+      padding: " 8px 10px",
+      ...variantValue.menu,
+    }),
+    menuList: (provided) => ({
+      ...provided,
+      display: "flex",
+      flexDirection: "column",
+      gap: "4px",
+    }),
+    option: (provided) => ({
+      ...provided,
+      borderRadius: "8px",
+      ...variantValue.option,
+    }),
+    multiValue: (provided) => ({
+      ...provided,
+      borderRadius: "8px",
+      backgroundColor: "white",
+      border: "1px solid #00000040",
+    }),
+    multiValueLabel: (provided) => ({
+      ...provided,
+      fontWeight: "700",
+      color: "#005BC4",
+    }),
+    multiValueRemove: (provided) => ({
+      ...provided,
+      borderRadius: "8px",
+    }),
+  };
+
+  const handleChange = (selectedOption: any) => {
+    if (isMulti) {
+      const selectedValues = selectedOption
+        ? selectedOption.map((option: dataType) => option.value)
+        : [];
+      getValue && getValue(selectedValues);
+    } else {
+      getValue && getValue(selectedOption?.value || "");
+    }
+  };
+
   return (
     <Select
-      value={value}
-      onChange={(val) => setValue(val || "")}
-      size="lg"
-      color="blue"
-      animate={{
-        mount: { y: 0 },
-        unmount: { y: 25 },
+      options={data}
+      styles={customStyles}
+      components={{
+        DropdownIndicator: () => (
+          <FiChevronDown style={{ marginRight: "8px" }} />
+        ),
+        IndicatorSeparator: () => null,
       }}
-      placeholder={undefined}
-      onPointerEnterCapture={undefined}
-      onPointerLeaveCapture={undefined}
-    >
-      <Option>salom</Option>
-      <Option>hayr</Option>
-      <Option>salom</Option>
-      <Option>hayr</Option>
-    </Select>
+      placeholder={placeholder}
+      isMulti={isMulti ? true : undefined}
+      isSearchable={isSearchable}
+      onChange={handleChange}
+      className=" font-public_sans text-lg text-main_color-600"
+    />
   );
 }
 
