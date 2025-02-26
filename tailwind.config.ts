@@ -8,18 +8,16 @@ export default {
   theme: {
     extend: {
       colors: {
-        white: "var(--white)",
-        "bg-light": "var(--bg-light)",
-        "input-color": "var(--input-color)",
-        "line-color": "var(--line-color)",
-        black: "var(--black)",
+        "bg-light": "#f5f7f9",
+        "input-color": "#f4f4f4",
+        "line-color": "#bfc9d9",
         "main-color": {
-          100: "var(--main-color-100)",
-          200: "var(--main-color-200)",
-          300: "var(--main-color-300)",
-          400: "var(--main-color-400)",
-          500: "var(--main-color-500)",
-          600: "var(--main-color-600)",
+          100: "#f2f8ff",
+          200: "#99c7fb",
+          300: "#66aaf9",
+          400: "#338ef7",
+          500: "#006fee",
+          600: "#005bc4",
         },
       },
     },

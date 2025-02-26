@@ -3,11 +3,9 @@
 @tailwind utilities;
 
 :root {
-  --white: #ffffff;
   --bg-light: #f5f7f9;
   --input-color: #f4f4f4;
   --line-color: #bfc9d9;
-  --black: #000000;
   --main-color-100: #f2f8ff;
   --main-color-200: #99c7fb;
   --main-color-300: #66aaf9;
@@ -18,11 +16,9 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --white: #ffffff;
     --bg-light: #f5f7f9;
     --input-color: #f4f4f4;
     --line-color: #bfc9d9;
-    --black: #000000;
     --main-color-100: #f2f8ff;
     --main-color-200: #99c7fb;
     --main-color-300: #66aaf9;
